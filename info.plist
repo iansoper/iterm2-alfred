@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.iansoper.openiniterm</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>AEFE5C46-B7B9-457C-BC68-16ACB8EFAD6E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>21E92F9A-4DE4-4F91-8C3D-628B9266DF4A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Ian Soper</string>
+	<key>description</key>
+	<string>Open location in iTerm2</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Open in iTerm2</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)tell application "iTerm"
+    make new terminal
+    tell the current terminal
+        activate current session
+        launch session "Default Session"
+        tell the last session
+            write text "cd " &amp; q &amp; "; clear; pwd"
+        end tell
+    end tell
+end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>21E92F9A-4DE4-4F91-8C3D-628B9266DF4A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Open in iTerm2</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>AEFE5C46-B7B9-457C-BC68-16ACB8EFAD6E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow takes a folder chosen from Alfred and opens iTerm to the path of that folder.
+
+Select a folder in Alfred and then choose the option "Open in Term".</string>
+	<key>uidata</key>
+	<dict>
+		<key>21E92F9A-4DE4-4F91-8C3D-628B9266DF4A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>AEFE5C46-B7B9-457C-BC68-16ACB8EFAD6E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://iansoper.com</string>
+</dict>
+</plist>
